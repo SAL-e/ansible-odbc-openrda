@@ -1,3 +1,4 @@
 ---
 odbc_openrda_pkg: "OpenRDA.zip"
 odbc_openrda_src: ""
+odbc_openrda_dest: "C:\\OpenRDA\\"

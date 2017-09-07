@@ -9,3 +9,9 @@
   win_unzip:
     src: "{{ ansible_env['TMP'] }}\\{{ odbc_openrda_pkg }}"
     dest: "{{ ansible_env['TMP'] }}\\OpenRDA"
+
+- name: "Move OpenRDA files into {{ odbc_openrda_dest }}"
+  win_robocopy:
+    src: "{{ ansible_env['TMP'] }}\\OpenRDA\\OpenRDA\\"
+    dest: "{{ odbc_openrda_dest }}"
+    flags: /MIR /MOVE
