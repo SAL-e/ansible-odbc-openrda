@@ -1,2 +1,3 @@
 ---
-# defaults file for ansible-odbc-openrda
+odbc_openrda_pkg: "OpenRDA.zip"
+odbc_openrda_src: ""
