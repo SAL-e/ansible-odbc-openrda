@@ -1,7 +1,7 @@
-Role Name
-=========
+ansible-odbc-openrda
+====================
 
-A brief description of the role goes here.
+Ansible role to install OpenRDA ODBC Driver and ODBC datasource.
 
 Requirements
 ------------
@@ -25,12 +25,12 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: sal-e.ansible-odbc-openrda, odbc_openrda_pkg: OpenRDA.zip }
 
 License
 -------
 
-BSD
+GPLv3
 
 Author Information
 ------------------
