@@ -15,3 +15,9 @@
     src: "{{ ansible_env['TMP'] }}\\OpenRDA\\OpenRDA\\"
     dest: "{{ odbc_openrda_dest }}"
     flags: /MIR /MOVE
+
+- name: "Create shortcut to odbcisql.exe"
+  win_shortcut:
+    src: "{{ odbc_openrda_dest }}\\DNA\\SQLEngine\\3rdParty\\ATI\\bin\\iwinnt\\odbcisql.exe"
+    dest: "{{ ansible_env['PUBLIC'] }}\\Desktop\\OpenRDA Interactive SQL (x64).lnk"
+    directory: "{{ ansible_env['windir'] }}"\\system32
