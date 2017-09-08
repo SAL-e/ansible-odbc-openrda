@@ -40,3 +40,9 @@
         path: HKLM:\SOFTWARE\ODBC\ODBCINST.INI\ODBC Drivers
         name: OpenRDA
         data: Installed
+
+- name: "Configure the OpenRDA ODBC driver"
+  template:
+    src: templates\openrda.ini.j2
+    dist: "{{ odbc_openrda_dest }}DNA\\SQLEngine\\3rdParty\\ATI\\bin\\iwinnt\\openrda.ini"
+    newline_sequence: '\r\n'

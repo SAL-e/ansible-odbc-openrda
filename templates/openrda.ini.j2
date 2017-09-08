@@ -1,0 +1,32 @@
+[Common]
+	oa_root={{ odbc_openrda_dest }}DNA\SQLEngine\3rdParty\ATI
+	SchemaPath={{ odbc_openrda_dest }}DNA\SQLEngine\3rdParty\ATI\schema
+	Config={{ odbc_openrda_dest }}DNA\SQLEngine\3rdParty\ATI\config\iwinnt
+	SchemaUpdateAllowed=0
+	CacheOptions=PATH={{ odbc_openrda_dest }}temp;INITIAL_SIZE=10;INCREMENT_SIZE=5;MAX_SIZE=50;DATABLOCK_SIZE=64
+	CacheMemSize=8192
+	SQLEngineVerboseMode=0x00
+	SQLEngineVerboseTraceFile={{ odbc_openrda_dest }}DNA\SQLEngine\3rdParty\ATI\bin\iwinnt\oasqlverbose.log
+	EncryptionPackage=0
+	CryptoProvider=Microsoft Strong Cryptographic Provider
+	FETCHBLOCK_SIZE=25
+	SessPollWaitTime=20
+	JOINBLOCK_SIZE=10
+	LogFileMaxSize=8192
+	LogFileClose=1
+	UseThreads=1
+	SecurityPackage=Negotiate_DBMS
+[Client]
+	KeyFile={{ odbc_openrda_dest }}DNA\SQLEngine\3rdParty\ATI\config\iwinnt\oaclientkey.lic
+	TraceFile={{ odbc_openrda_dest }}DNA\SQLEngine\3rdParty\ATI\bin\iwinnt\oaclient.log
+	PromptForUID=1
+	Port=0
+	SupportQueryTimeout=1
+	DefaultQueryTimeout=60
+	SecurityPackage=Kerberos
+	RESPONSE_TIME_OUT=3600
+[TraceClient]
+	All=FATAL|SNO
+[ODBC32]
+	TraceFile={{ odbc_openrda_dest }}DNA\SQLEngine\3rdParty\ATI\bin\iwinnt\oaodbc32.log
+	TraceOptions=0
