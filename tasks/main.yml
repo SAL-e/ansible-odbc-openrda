@@ -21,3 +21,22 @@
     src: "{{ odbc_openrda_dest }}\\DNA\\SQLEngine\\3rdParty\\ATI\\bin\\iwinnt\\odbcisql.exe"
     dest: "{{ ansible_env['PUBLIC'] }}\\Desktop\\OpenRDA Interactive SQL (x64).lnk"
     directory: "{{ ansible_env['windir'] }}\\system32"
+
+- name: "Register the OpenRDA ODBC driver"
+  block:
+    - win_regedit:
+        path: HKLM:\SOFTWARE\ODBC\ODBCINST.INI\OpenRDA
+        name: Driver
+        data: "{{ odbc_openrda_dest }}\\DNA\\SQLEngine\\3rdParty\\ATI\\bit\\iwinnt\\oaodbc32.dll"
+    - win_regedit:
+        path: HKLM:\SOFTWARE\ODBC\ODBCINST.INI\OpenRDA
+        name: setup
+        data: "{{ odbc_openrda_dest }}\\DNA\\SQLEngine\\3rdParty\\ATI\\bit\\iwinnt\\oastp32.dll"
+    - win_regedit:
+        path: HKLM:\SOFTWARE\ODBC\ODBCINST.INI\OpenRDA
+        name: CustomPropertiesSetup
+        data: ""
+    - win_regedit:
+        path: HKLM:\SOFTWARE\ODBC\ODBCINST.INI\ODBC Drivers
+        name: OpenRDA
+        data: Installed
