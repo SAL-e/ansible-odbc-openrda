@@ -27,11 +27,11 @@
     - win_regedit:
         path: HKLM:\SOFTWARE\ODBC\ODBCINST.INI\OpenRDA
         name: Driver
-        data: "{{ odbc_openrda_dest }}DNA\\SQLEngine\\3rdParty\\ATI\\bit\\iwinnt\\oaodbc32.dll"
+        data: "{{ odbc_openrda_dest }}DNA\\SQLEngine\\3rdParty\\ATI\\bin\\iwinnt\\oaodbc32.dll"
     - win_regedit:
         path: HKLM:\SOFTWARE\ODBC\ODBCINST.INI\OpenRDA
         name: setup
-        data: "{{ odbc_openrda_dest }}DNA\\SQLEngine\\3rdParty\\ATI\\bit\\iwinnt\\oastp32.dll"
+        data: "{{ odbc_openrda_dest }}DNA\\SQLEngine\\3rdParty\\ATI\\bin\\iwinnt\\oastp32.dll"
     - win_regedit:
         path: HKLM:\SOFTWARE\ODBC\ODBCINST.INI\OpenRDA
         name: CustomPropertiesSetup
