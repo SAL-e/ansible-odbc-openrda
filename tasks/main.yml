@@ -20,4 +20,4 @@
   win_shortcut:
     src: "{{ odbc_openrda_dest }}\\DNA\\SQLEngine\\3rdParty\\ATI\\bin\\iwinnt\\odbcisql.exe"
     dest: "{{ ansible_env['PUBLIC'] }}\\Desktop\\OpenRDA Interactive SQL (x64).lnk"
-    directory: "{{ ansible_env['windir'] }}"\\system32
+    directory: "{{ ansible_env['windir'] }}\\system32"
