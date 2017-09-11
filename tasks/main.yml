@@ -53,13 +53,7 @@
     state: touch
 
 - name: "Configure the OpenAccess Database (add DBs)"
-  block:
-    - template:
-        src: templates\oadrd.ini.j2
-        dist: "{{ odbc_openrda_dest }}DNA\\SQLEngine\\3rdParty\\ATI\\schema\\oadrd_.ini"
-        newline_sequence: '\r\n'
-    - win_command: "type oadrd_.ini >> oadrd.ini"
-        chdir: "{{ odbc_openrda_dest }}DNA\\SQLEngine\\3rdParty\\ATI\\schema\\"
+  include: add-db.yml
   with_items:
     odbc_openrda_dbs
 
