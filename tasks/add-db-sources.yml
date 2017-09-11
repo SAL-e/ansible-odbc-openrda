@@ -1,0 +1,35 @@
+- set_fact:
+    db: "{{ item }}"
+- name: "Register the OpenRDA ODBC db sources: ({{ item.name }})"
+  win_regedit:
+    path: "HKLM:\\SOFTWARE\\ODBC\\ODBC.INI\\{{ item.name }}"
+    name: Database
+    data: "{{ item.db }}"
+  win_regedit:
+    path: "HKLM:\\SOFTWARE\\ODBC\\ODBC.INI\\{{ item.name }}"
+    name: DescribeParam
+    data: "y"
+  win_regedit:
+    path: "HKLM:\\SOFTWARE\\ODBC\\ODBC.INI\\{{ item.name }}"
+    name: Description
+    data: "{{ item.description }}"
+  win_regedit:
+    path: "HKLM:\\SOFTWARE\\ODBC\\ODBC.INI\\{{ item.name }}"
+    name: Driver
+    data: "{{ odbc_openrda_dest }}DNA\\SQLEngine\\3rdParty\\ATI\\bin\\iwinnt\\oaodbc32.dll"
+  win_regedit:
+    path: "HKLM:\\SOFTWARE\\ODBC\\ODBC.INI\\{{ item.name }}"
+    name: ExtendedFunctions
+    data: "Oxf"
+  win_regedit:
+    path: "HKLM:\\SOFTWARE\\ODBC\\ODBC.INI\\{{ item.name }}"
+    name: SecurityPackage
+    data: "{{ item.security_packages }}"
+  win_regedit:
+    path: "HKLM:\\SOFTWARE\\ODBC\\ODBC.INI\\{{ item.name }}"
+    name: CustomProperties
+    data: "{{ item.custom_properties }}"
+  win_regedit:
+    path: "HKLM:\\SOFTWARE\\ODBC\\ODBC.INI\\ODBC Data Sources"
+    name: "{{ item.name }}"
+    data: "OpenRDA"

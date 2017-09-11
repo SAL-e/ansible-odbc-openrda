@@ -61,3 +61,8 @@
   win_file:
     path: "{{ odbc_openrda_dest }}DNA\\SQLEngine\\3rdParty\\ATI\\schema\\oadrd_.ini"
     state: absent
+
+- name: "Configure the OpenAccess Database Sources"
+  include: add-db-sources.yml
+  with_items:
+    "{{ odbc_openrda_data_sources }}"
