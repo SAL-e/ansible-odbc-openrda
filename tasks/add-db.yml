@@ -1,8 +1,8 @@
 - set_fact:
     db: "{{ item }}"
-- template:
-    src: templates\oadrd.ini.j2
-    dist: "{{ odbc_openrda_dest }}DNA\\SQLEngine\\3rdParty\\ATI\\schema\\oadrd_.ini"
+- win_template:
+    src: templates/oadrd.ini.j2
+    dest: "{{ odbc_openrda_dest }}DNA\\SQLEngine\\3rdParty\\ATI\\schema\\oadrd_.ini"
     newline_sequence: '\r\n'
-- win_command: "type oadrd_.ini >> oadrd.ini"
+- win_shell: "type oadrd_.ini >> oadrd.ini"
     chdir: "{{ odbc_openrda_dest }}DNA\\SQLEngine\\3rdParty\\ATI\\schema\\"
