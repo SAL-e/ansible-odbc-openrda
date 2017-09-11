@@ -55,7 +55,7 @@
 - name: "Configure the OpenAccess Database (add DBs)"
   include: add-db.yml
   with_items:
-    {{ odbc_openrda_dbs }}
+    "{{ odbc_openrda_dbs }}"
 
 - name: "Configure the OpenAccess Database (cleanup)"
   win_file:

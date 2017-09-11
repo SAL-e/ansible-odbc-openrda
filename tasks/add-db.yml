@@ -4,5 +4,6 @@
     src: templates/oadrd.ini.j2
     dest: "{{ odbc_openrda_dest }}DNA\\SQLEngine\\3rdParty\\ATI\\schema\\oadrd_.ini"
     newline_sequence: '\r\n'
-- win_shell: "type oadrd_.ini >> oadrd.ini"
+- win_shell: "powershell Get-Content oadrd_.ini | Out-File -Encoding ASCII -Append oadrd.ini"
+  args:
     chdir: "{{ odbc_openrda_dest }}DNA\\SQLEngine\\3rdParty\\ATI\\schema\\"
