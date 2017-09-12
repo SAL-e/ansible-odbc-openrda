@@ -11,10 +11,10 @@ odbc_openrda_data_sources:
   - name: esrtdb
     db: esrealtime
     description: "Schneider Electric"
-    security_packages: Kerberos
+    security_package: Kerberos
     custom_properties: "SECURITY_LOGIN_ID=CHANGEDOMAIN\\CHANGEUSER"
   - name: localrtdb
     db: localrtdb
     description: "Schneider Electric"
-    security_packages: Kerberos
+    security_package: Kerberos
     custom_properties: "SECURITY_LOGIN_ID=CHANGEDOMAIN\\CHANGEUSER"
