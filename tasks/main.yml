@@ -3,7 +3,7 @@
 - name: "Copy {{ odbc_openrda_pkg }} to temp directory"
   win_copy:
     src: "{{ odbc_openrda_src }}{{ odbc_openrda_pkg }}"
-    dest: "{{ ansible_env['TMP'] }}"
+    dest: "{{ ansible_env['TMP'] }}\\"
 
 - name: Unzip the {{ odbc_openrda_pkg }}
   win_unzip:
@@ -53,7 +53,7 @@
     state: touch
 
 - name: "Configure the OpenAccess Database (add DBs)"
-  include: add-db.yml
+  include_tasks: add-db.yml
   with_items:
     "{{ odbc_openrda_dbs }}"
 
@@ -63,6 +63,6 @@
     state: absent
 
 - name: "Configure the OpenAccess Database Sources"
-  include: add-db-sources.yml
+  include_tasks: add-db-sources.yml
   with_items:
     "{{ odbc_openrda_data_sources }}"
